@@ -1,13 +1,16 @@
 const sounds = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong'];
 const buttonsContainer = document.getElementById('buttons');
 
-// Create a button for each sound
+// Create an <audio> tag for each sound and a button to play it
 sounds.forEach(sound => {
   const btn = document.createElement('button');
   btn.classList.add('btn');
   btn.innerText = sound;
 
-  const audio = new Audio(`sounds/${sound}.mp3`);
+  const audio = document.createElement('audio');
+  audio.src = `sounds/${sound}.mp3`;
+  audio.id = sound;
+  document.body.appendChild(audio);
 
   btn.addEventListener('click', () => {
     stopSounds();
@@ -27,8 +30,8 @@ buttonsContainer.appendChild(stopBtn);
 // Function to stop all sounds
 function stopSounds() {
   sounds.forEach(sound => {
-    const audio = new Audio(`sounds/${sound}.mp3`);
-    audio.pause();
-    audio.currentTime = 0;
+    const audioEl = document.getElementById(sound);
+    audioEl.pause();
+    audioEl.currentTime = 0;
   });
 }

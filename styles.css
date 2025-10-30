@@ -1,7 +1,6 @@
-/*  your css code here. If applicable */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #a855f7;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,34 +9,20 @@ body {
 
 #buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+  gap: 20px;
 }
 
 .btn, .stop {
-  padding: 12px 24px;
-  font-size: 16px;
+  background-color: #6b21a8;
+  color: white;
   border: none;
   border-radius: 6px;
+  padding: 20px 40px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
 
-.btn {
-  background-color: #3498db;
-  color: white;
-}
-
-.btn:hover {
-  background-color: #2980b9;
-}
-
-.stop {
-  background-color: #e74c3c;
-  color: white;
-}
-
-.stop:hover {
-  background-color: #c0392b;
+.btn:hover, .stop:hover {
+  background-color: #9333ea;
 }
